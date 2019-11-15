@@ -12,18 +12,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var tableView: UITableView!
     
-    var moviesViewModels = [MovieViewModel]() {
-        didSet {
-            tableView.reloadData()
-        }
-    }
-    
+    var moviesViewModels = [MovieViewModel]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        MovieViewModel.getMovies { (movieJSON) in
-            for movie in movieJSON.results {
+        NetworkService.shared.getMovies { (moviesJSON) in
+            for movie in moviesJSON.results {
                 self.moviesViewModels.append(MovieViewModel(movie: movie))
             }
             self.tableView.reloadData()
@@ -38,11 +34,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! Cell
         cell.titleLabel.text = moviesViewModels[indexPath.row].title
         cell.descriptionLabel.text = String(moviesViewModels[indexPath.row].overview)
-        cell.posterImage.image = moviesViewModels[indexPath.row].image
-        
+        //cell.posterImage.image = nil
+        cell.posterImage.downloadedFrom(urlString: "https://image.tmdb.org/t/p/w500" + moviesViewModels[indexPath.row].poster_path!)
 
         return cell
     }
     
 }
+
 
