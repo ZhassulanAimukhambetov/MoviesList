@@ -12,7 +12,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var tableView: UITableView!
     
-    var moviesViewModels = [MovieViewModel]()
+    var movieViewModels = [MovieViewModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,24 +20,31 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.delegate = self
         NetworkService.shared.getMovies { (moviesJSON) in
             for movie in moviesJSON.results {
-                self.moviesViewModels.append(MovieViewModel(movie: movie))
+                self.movieViewModels.append(MovieViewModel(movie: movie))
             }
             self.tableView.reloadData()
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return moviesViewModels.count
+        return movieViewModels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! Cell
-        cell.titleLabel.text = moviesViewModels[indexPath.row].title
-        cell.descriptionLabel.text = String(moviesViewModels[indexPath.row].overview)
-        //cell.posterImage.image = nil
-        cell.posterImage.downloadedFrom(urlString: "https://image.tmdb.org/t/p/w500" + moviesViewModels[indexPath.row].poster_path!)
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath) as! MovieCell
+        cell.configureMovieCell(movieViewModel: movieViewModels[indexPath.row])
         return cell
+    }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let lastItem = movieViewModels.count - 1
+        if indexPath.row == lastItem {
+            NetworkService.shared.getMovies(page: movieViewModels.count/20 + 1) { (moviesJSON) in
+                for movie in moviesJSON.results {
+                    self.movieViewModels.append(MovieViewModel(movie: movie))
+                }
+                self.tableView.reloadData()
+            }
+        }
     }
     
 }
