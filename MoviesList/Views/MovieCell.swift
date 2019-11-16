@@ -12,11 +12,14 @@ class MovieCell: UITableViewCell {
     
     @IBOutlet weak var posterImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var ratingLabel: UILabel!
+    
     
     func configureMovieCell(movieViewModel: MovieViewModel) {
         self.titleLabel.text = movieViewModel.title
-        self.descriptionLabel.text = movieViewModel.overview
+        self.dateLabel.text = movieViewModel.release_date
+        self.ratingLabel.text = movieViewModel.rating
         self.posterImage.image = nil
         NetworkService.shared.getImage(urlPath: movieViewModel.poster_path) { (image) in
             self.posterImage.image = image

@@ -18,7 +18,7 @@ class RootViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         NetworkService.shared.getMovies { (moviesJSON) in
-            moviesJSON.results.map{self.movieViewModels.append(MovieViewModel(movie: $0))}
+            moviesJSON.results.forEach{self.movieViewModels.append(MovieViewModel(movie: $0))}
             self.tableView.reloadData()
         }
     }
@@ -44,17 +44,13 @@ extension RootViewController: UITableViewDataSource {
         if indexPath.row == lastItem {
             if searchText == "" {
                 NetworkService.shared.getMovies(page: page) { (moviesJSON) in
-                    for movie in moviesJSON.results {
-                        self.movieViewModels.append(MovieViewModel(movie: movie))
-                    }
+                    moviesJSON.results.forEach{self.movieViewModels.append(MovieViewModel(movie: $0))}
                     self.tableView.reloadData()
                 }
             } else {
                 NetworkService.shared.searchMovies(page: page, query: searchText) { (moviesJSON) in
                     if page < moviesJSON.total_pages{
-                        for movie in moviesJSON.results {
-                            self.movieViewModels.append(MovieViewModel(movie: movie))
-                        }
+                        moviesJSON.results.forEach{self.movieViewModels.append(MovieViewModel(movie: $0))}
                         self.tableView.reloadData()
                     }
                 }
@@ -88,13 +84,13 @@ extension RootViewController: UISearchBarDelegate {
         if searchText != "" {
             NetworkService.shared.searchMovies(query: searchText) { (moviesJSON) in
                 self.movieViewModels.removeAll()
-                moviesJSON.results.map{self.movieViewModels.append(MovieViewModel(movie: $0))}
+                moviesJSON.results.forEach{self.movieViewModels.append(MovieViewModel(movie: $0))}
                 self.tableView.reloadData()
             }
         } else {
             NetworkService.shared.getMovies { (moviesJSON) in
                 self.movieViewModels.removeAll()
-                moviesJSON.results.map{self.movieViewModels.append(MovieViewModel(movie: $0))}
+                moviesJSON.results.forEach{self.movieViewModels.append(MovieViewModel(movie: $0))}
                 self.tableView.reloadData()
             }
         }

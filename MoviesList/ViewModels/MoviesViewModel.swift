@@ -14,22 +14,20 @@ class MovieViewModel {
     let title: String
     let overview: String
     let poster_path: String?
+    let release_date: String?
+    let voteAverage: Double
+    var rating: String {
+        return "Rating: \(String(self.voteAverage))"
+    }
     
     init(movie: Movie) {
         self.id = movie.id
         self.title = movie.title
         self.overview = movie.overview
         self.poster_path = movie.poster_path
+        self.release_date = movie.release_date
+        self.voteAverage = movie.vote_average
     }
-    
-    func downloadMovies() {
-        
-    }
-    
-    func continueDownloadMovies(movieViewModels: inout [MovieViewModel], indexPathRow: Int, complition: @escaping () -> ()) {
-
-    }
-    
     
 }
 
