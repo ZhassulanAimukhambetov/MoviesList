@@ -12,7 +12,6 @@ class RootViewController: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
-    
     var movieViewModels = [MovieViewModel]()
     
     override func viewDidLoad() {
@@ -64,6 +63,7 @@ extension RootViewController: UITableViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetailVC" {
             if let cell = sender as? MovieCell {
+                cell.setSelected(false, animated: true)
                 if let indexPath = tableView.indexPath(for: cell){
                     let movieVM = movieViewModels[indexPath.row]
                     let detailVC = segue.destination as? DetailViewController
@@ -80,6 +80,7 @@ extension RootViewController: UITableViewDelegate {
 
 //MARK: -  UISearchBarDelegate
 extension RootViewController: UISearchBarDelegate {
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText != "" {
             NetworkService.shared.searchMovies(query: searchText) { (moviesJSON) in
@@ -88,6 +89,7 @@ extension RootViewController: UISearchBarDelegate {
                 self.tableView.reloadData()
             }
         } else {
+            searchBar.endEditing(true)
             NetworkService.shared.getMovies { (moviesJSON) in
                 self.movieViewModels.removeAll()
                 moviesJSON.results.forEach{self.movieViewModels.append(MovieViewModel(movie: $0))}
@@ -95,4 +97,5 @@ extension RootViewController: UISearchBarDelegate {
             }
         }
     }
+
 }

@@ -24,9 +24,4 @@ struct Movie: Decodable {
     let vote_average: Double
 }
 
-struct MovieJSON: Decodable {
-    let results: [Movie]
-    let page: Int
-    let total_pages: Int
-    let total_results: Int
-}
+
