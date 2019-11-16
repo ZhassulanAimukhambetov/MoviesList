@@ -11,11 +11,17 @@ import UIKit
 
 class NetworkService {
     
+    let urlAPI = "https://api.themoviedb.org/3"
+    let urlNowPlaying = "/movie/now_playing"
+    let urlSearch = "/search/movie"
+    let apiKey = "a055f70548b7278f1f017fc33819dd5b"
+    
     public static let shared = NetworkService()
+    private init () {}
     
     func getMovies(page: Int = 1, complition: @escaping (_ movies: MovieJSON) -> ()) {
         let pageString = String(page)
-        let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=a055f70548b7278f1f017fc33819dd5b&language=ru&page=" + pageString)
+        let url = URL(string: "\(urlAPI)\(urlNowPlaying)?api_key=\(apiKey)&language=ru&page=\(pageString)")
         let task = URLSession.shared.dataTask(with: url!) { (data, responce, error) in
             guard let data = data else { return }
             let moviesJSON = try! JSONDecoder().decode(MovieJSON.self, from: data)
@@ -25,29 +31,33 @@ class NetworkService {
         }
         task.resume()
     }
-}
-
-extension UIImageView {
-    func downloadedFrom(urlPath: String?) {
+    
+    func getImage(urlPath: String?, complition: @escaping (UIImage?) -> ()) {
         if let urlPath = urlPath {
             let url = URL(string: "https://image.tmdb.org/t/p/w500" + urlPath)!
             let task = URLSession.shared.dataTask(with: url) { (data, responce, error) in
-                guard let data = data else {
-                    self.image = UIImage(named: "noimage")
-                    return
-                }
+                guard let data = data else { return }
                 if let image = UIImage(data: data) {
                     DispatchQueue.main.async {
-                        self.image = image
+                        complition(image)
                     }
-                } else {
-                    self.image = UIImage(named: "noimage")
                 }
             }
             task.resume()
-            
-        } else {
-            self.image = UIImage(named: "noimage")
         }
+    }
+    
+    func searchMovies(page: Int = 1, query: String, complition: @escaping (_ movies: MovieJSON) -> ()) {
+        let pageString = String(page)
+        let queryUrl = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+        let url = URL(string: "\(urlAPI)\(urlSearch)?api_key=\(apiKey)&language=ru&page=\(pageString)&query=\(queryUrl!)")
+        let task = URLSession.shared.dataTask(with: url!) { (data, responce, error) in
+            guard let data = data else { return }
+            let moviesJSON = try! JSONDecoder().decode(MovieJSON.self, from: data)
+            DispatchQueue.main.async {
+                complition(moviesJSON)
+            }
+        }
+        task.resume()
     }
 }

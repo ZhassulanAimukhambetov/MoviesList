@@ -9,16 +9,18 @@
 import UIKit
 
 class MovieCell: UITableViewCell {
-
+    
     @IBOutlet weak var posterImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-
+    
     func configureMovieCell(movieViewModel: MovieViewModel) {
         self.titleLabel.text = movieViewModel.title
         self.descriptionLabel.text = movieViewModel.overview
         self.posterImage.image = nil
-        //self.posterImage.downloadedFrom(urlPath: movieViewModel.poster_path)
-        self.posterImage.image = movieViewModel.image
+        NetworkService.shared.getImage(urlPath: movieViewModel.poster_path) { (image) in
+            self.posterImage.image = image
+        }
+        
     }
 }
