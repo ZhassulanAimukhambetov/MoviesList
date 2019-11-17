@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,7 +17,12 @@
 		D1FF6AB4237DBF7D009E137E /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FF6AB3237DBF7D009E137E /* MovieCell.swift */; };
 		D1FF6AB8237E8379009E137E /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FF6AB7237E8379009E137E /* NetworkService.swift */; };
 		D1FF6ABA237FC3F4009E137E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FF6AB9237FC3F4009E137E /* DetailViewController.swift */; };
+<<<<<<< HEAD
 		F0B83A672381465F006D61A7 /* ViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B83A662381465F006D61A7 /* ViewController1.swift */; };
+=======
+		F0B83A63238071F1006D61A7 /* Bebas Neue.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0B83A62238071F1006D61A7 /* Bebas Neue.ttf */; };
+		F0B83A6523807E8D006D61A7 /* MovieJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B83A6423807E8D006D61A7 /* MovieJSON.swift */; };
+>>>>>>> 76374393f3fb848d19c1458b70471193c073e148
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +38,12 @@
 		D1FF6AB3237DBF7D009E137E /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		D1FF6AB7237E8379009E137E /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		D1FF6AB9237FC3F4009E137E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		F0B83A662381465F006D61A7 /* ViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController1.swift; sourceTree = "<group>"; };
+=======
+		F0B83A62238071F1006D61A7 /* Bebas Neue.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bebas Neue.ttf"; sourceTree = "<group>"; };
+		F0B83A6423807E8D006D61A7 /* MovieJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieJSON.swift; sourceTree = "<group>"; };
+>>>>>>> 76374393f3fb848d19c1458b70471193c073e148
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,11 +77,11 @@
 			isa = PBXGroup;
 			children = (
 				D1FF6A97237D1A59009E137E /* AppDelegate.swift */,
-				D1FF6AB6237E8356009E137E /* Service */,
-				D1FF6AB5237E8336009E137E /* Controllers */,
 				D1FF6AAB237D1C30009E137E /* Models */,
 				D1FF6AAC237D1C3B009E137E /* ViewModels */,
 				D1FF6AAD237D1C44009E137E /* Views */,
+				D1FF6AB5237E8336009E137E /* Controllers */,
+				D1FF6AB6237E8356009E137E /* Service */,
 				D1FF6AAE237D1C6A009E137E /* Resourсes */,
 				D1FF6AA5237D1A62009E137E /* Info.plist */,
 			);
@@ -82,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				D1FF6AAF237D1CFF009E137E /* Movies.swift */,
+				F0B83A6423807E8D006D61A7 /* MovieJSON.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -108,6 +119,7 @@
 		D1FF6AAE237D1C6A009E137E /* Resourсes */ = {
 			isa = PBXGroup;
 			children = (
+				F0B83A5A23806E69006D61A7 /* Fonts */,
 				D1FF6AA0237D1A62009E137E /* Assets.xcassets */,
 			);
 			path = "Resourсes";
@@ -128,6 +140,14 @@
 				D1FF6AB7237E8379009E137E /* NetworkService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		F0B83A5A23806E69006D61A7 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F0B83A62238071F1006D61A7 /* Bebas Neue.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,11 +182,12 @@
 				TargetAttributes = {
 					D1FF6A93237D1A59009E137E = {
 						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1030;
 					};
 				};
 			};
 			buildConfigurationList = D1FF6A8F237D1A59009E137E /* Build configuration list for PBXProject "MoviesList" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -188,6 +209,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0B83A63238071F1006D61A7 /* Bebas Neue.ttf in Resources */,
 				D1FF6AA4237D1A62009E137E /* LaunchScreen.storyboard in Resources */,
 				D1FF6AA1237D1A62009E137E /* Assets.xcassets in Resources */,
 				D1FF6A9F237D1A5A009E137E /* Main.storyboard in Resources */,
@@ -206,6 +228,7 @@
 				D1FF6A98237D1A59009E137E /* AppDelegate.swift in Sources */,
 				D1FF6AB4237DBF7D009E137E /* MovieCell.swift in Sources */,
 				D1FF6AB0237D1CFF009E137E /* Movies.swift in Sources */,
+				F0B83A6523807E8D006D61A7 /* MovieJSON.swift in Sources */,
 				D1FF6AB8237E8379009E137E /* NetworkService.swift in Sources */,
 				D1FF6AB2237DBDF6009E137E /* MoviesViewModel.swift in Sources */,
 				D1FF6ABA237FC3F4009E137E /* DetailViewController.swift in Sources */,
