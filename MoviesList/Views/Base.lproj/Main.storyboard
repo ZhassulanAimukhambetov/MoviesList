@@ -41,7 +41,7 @@
                                 <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" semanticContentAttribute="playback" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="movieCell" rowHeight="100" id="l2n-LE-T3h" customClass="MovieCell" customModule="MoviesList" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" semanticContentAttribute="playback" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="0.0" reuseIdentifier="movieCell" rowHeight="100" id="l2n-LE-T3h" customClass="MovieCell" customModule="MoviesList" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="l2n-LE-T3h" id="Dwj-ef-LwH">
@@ -64,40 +64,47 @@
                                                     <rect key="frame" x="75" y="5.3333333333333357" width="290" height="90"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019-15-11" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wKX-HD-oGN">
-                                                            <rect key="frame" x="187.66666666666669" y="56" width="92.333333333333314" height="29"/>
+                                                            <rect key="frame" x="219.33333333333331" y="60" width="60.666666666666686" height="25"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="29" id="Nrp-2d-b8s"/>
+                                                                <constraint firstAttribute="height" constant="25" id="oBH-TM-F7y"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="12"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NvZ-y8-T2L">
-                                                            <rect key="frame" x="5" y="5" width="280" height="24"/>
-                                                            <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="20"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TITLE" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NvZ-y8-T2L">
+                                                            <rect key="frame" x="5" y="5" width="280" height="21"/>
+                                                            <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cM-aE-4c4">
-                                                            <rect key="frame" x="24" y="56" width="30.333333333333329" height="29"/>
+                                                            <rect key="frame" x="5" y="56" width="46.333333333333336" height="29"/>
+                                                            <color key="backgroundColor" red="0.0" green="0.65723677469999997" blue="0.66344781090000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <accessibility key="accessibilityConfiguration">
+                                                                <accessibilityTraits key="traits" image="YES" staticText="YES"/>
+                                                            </accessibility>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="29" id="ZQz-0i-bTI"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="5"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.10468573939439479" green="0.12295433812832084" blue="0.13963356598984766" alpha="0.55712221746575341" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="wKX-HD-oGN" secondAttribute="trailing" constant="10" id="41j-ov-P6V"/>
                                                         <constraint firstAttribute="bottom" secondItem="1cM-aE-4c4" secondAttribute="bottom" constant="5" id="7UF-G2-JwZ"/>
-                                                        <constraint firstItem="wKX-HD-oGN" firstAttribute="leading" secondItem="1cM-aE-4c4" secondAttribute="trailing" constant="133.33333333333334" id="Zo8-Hy-EgP"/>
-                                                        <constraint firstItem="1cM-aE-4c4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fiC-KP-lYW" secondAttribute="leading" symbolic="YES" id="csB-Sv-dN1"/>
+                                                        <constraint firstAttribute="trailing" secondItem="wKX-HD-oGN" secondAttribute="trailing" constant="10" id="9mu-20-8ib"/>
+                                                        <constraint firstAttribute="bottom" secondItem="wKX-HD-oGN" secondAttribute="bottom" constant="5" id="X5Q-Db-hOJ"/>
+                                                        <constraint firstItem="1cM-aE-4c4" firstAttribute="leading" secondItem="fiC-KP-lYW" secondAttribute="leading" constant="5" id="csB-Sv-dN1"/>
                                                         <constraint firstAttribute="trailing" secondItem="NvZ-y8-T2L" secondAttribute="trailing" constant="5" id="dn2-aF-aLw"/>
                                                         <constraint firstItem="NvZ-y8-T2L" firstAttribute="top" secondItem="fiC-KP-lYW" secondAttribute="top" constant="5" id="fYK-Gs-ejO"/>
                                                         <constraint firstItem="NvZ-y8-T2L" firstAttribute="leading" secondItem="fiC-KP-lYW" secondAttribute="leading" constant="5" id="y2k-4c-Mqm"/>
-                                                        <constraint firstAttribute="bottom" secondItem="wKX-HD-oGN" secondAttribute="bottom" constant="5" id="zAT-Lt-HIC"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -167,13 +174,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lk8-AP-Fo9">
                                 <rect key="frame" x="20" y="271.66666666666669" width="335" height="40"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Duration: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSj-dW-nnu">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Original language:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSj-dW-nnu">
                                         <rect key="frame" x="10" y="10" width="167.66666666666666" height="20"/>
                                         <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="180m" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBh-t4-nBb">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="English" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBh-t4-nBb">
                                         <rect key="frame" x="157.66666666666663" y="10" width="167.33333333333337" height="20"/>
                                         <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
@@ -212,13 +219,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QBo-hM-keZ">
                                 <rect key="frame" x="20" y="321.66666666666669" width="335" height="40"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Duration: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ul1-Mi-cWL">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Popularity:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ul1-Mi-cWL">
                                         <rect key="frame" x="10" y="10" width="167.66666666666666" height="20"/>
                                         <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="180m" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7YW-DE-rQa">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.74" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7YW-DE-rQa">
                                         <rect key="frame" x="157.66666666666663" y="10" width="167.33333333333337" height="20"/>
                                         <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
@@ -267,9 +274,16 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ORIGINAL TITLE" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6t-lT-EvK">
-                                <rect key="frame" x="30" y="230" width="325" height="21.666666666666657"/>
+                                <rect key="frame" x="30" y="240" width="325" height="21.666666666666686"/>
                                 <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ORIGINAL TITLE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t97-Wg-b80">
+                                <rect key="frame" x="30" y="221" width="88" height="15"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="12"/>
+                                <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -285,8 +299,8 @@
                             <constraint firstItem="BuL-23-Yh2" firstAttribute="leading" secondItem="Jg8-OD-t6C" secondAttribute="leading" constant="20" id="PGG-Dh-eY6"/>
                             <constraint firstItem="QBo-hM-keZ" firstAttribute="top" secondItem="lk8-AP-Fo9" secondAttribute="bottom" constant="10" id="QLZ-8n-GNE"/>
                             <constraint firstItem="QBo-hM-keZ" firstAttribute="leading" secondItem="Jg8-OD-t6C" secondAttribute="leading" constant="20" id="T3S-2P-fm7"/>
-                            <constraint firstItem="E6t-lT-EvK" firstAttribute="top" secondItem="rpM-m6-yGe" secondAttribute="bottom" constant="20" id="Zzx-ON-h5O"/>
-                            <constraint firstItem="lk8-AP-Fo9" firstAttribute="top" secondItem="E6t-lT-EvK" secondAttribute="bottom" constant="20" id="fHN-NE-yom"/>
+                            <constraint firstItem="E6t-lT-EvK" firstAttribute="top" secondItem="rpM-m6-yGe" secondAttribute="bottom" constant="30" id="Zzx-ON-h5O"/>
+                            <constraint firstItem="lk8-AP-Fo9" firstAttribute="top" secondItem="E6t-lT-EvK" secondAttribute="bottom" constant="10" id="fHN-NE-yom"/>
                             <constraint firstItem="Jg8-OD-t6C" firstAttribute="trailing" secondItem="E6t-lT-EvK" secondAttribute="trailing" constant="20" id="sSb-CG-FDu"/>
                             <constraint firstItem="lk8-AP-Fo9" firstAttribute="leading" secondItem="Jg8-OD-t6C" secondAttribute="leading" constant="20" id="sov-HK-4pM"/>
                             <constraint firstItem="Jg8-OD-t6C" firstAttribute="trailing" secondItem="BuL-23-Yh2" secondAttribute="trailing" constant="20" id="zog-I0-djf"/>
@@ -295,9 +309,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="Sye-Ph-Yk9"/>
                     <connections>
-                        <outlet property="durationLabel" destination="mBh-t4-nBb" id="RqI-nZ-ax1"/>
+                        <outlet property="languageLabel" destination="mBh-t4-nBb" id="RqI-nZ-ax1"/>
                         <outlet property="originalTitleLabel" destination="E6t-lT-EvK" id="xjV-VU-RG4"/>
                         <outlet property="overviewLabel" destination="JeB-5B-ldO" id="bm7-aZ-Xi5"/>
+                        <outlet property="popularityLabel" destination="7YW-DE-rQa" id="rmn-aj-1o8"/>
                         <outlet property="posterImage" destination="rpM-m6-yGe" id="msN-oh-9L2"/>
                     </connections>
                 </viewController>

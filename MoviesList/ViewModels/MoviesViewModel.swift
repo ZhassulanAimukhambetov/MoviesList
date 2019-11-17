@@ -18,6 +18,8 @@ struct MovieViewModel {
     let voteAverage: Double
     let backdrop_path: String?
     let original_title: String?
+    let popularity: String?
+    let originalLanguage: String
     var rating: String {
         return "Rating: \(String(self.voteAverage))"
     }
@@ -27,10 +29,12 @@ struct MovieViewModel {
         self.title = movie.title.uppercased()
         self.overview = movie.overview
         self.poster_path = movie.poster_path
-        self.release_date = movie.release_date
+        self.release_date = "Release: \(movie.release_date ?? "")"
         self.voteAverage = movie.vote_average
         self.backdrop_path = movie.backdrop_path
         self.original_title = movie.original_title.uppercased()
+        self.popularity = String(movie.popularity)
+        self.originalLanguage = movie.original_language
     }
     
 }

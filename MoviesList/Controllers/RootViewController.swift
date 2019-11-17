@@ -63,7 +63,7 @@ extension RootViewController: UITableViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetailVC" {
             if let cell = sender as? MovieCell {
-                cell.setSelected(false, animated: true)
+                //cell.setSelected(false, animated: true)
                 if let indexPath = tableView.indexPath(for: cell){
                     let movieVM = movieViewModels[indexPath.row]
                     let detailVC = segue.destination as? DetailViewController
@@ -97,5 +97,4 @@ extension RootViewController: UISearchBarDelegate {
             }
         }
     }
-
 }

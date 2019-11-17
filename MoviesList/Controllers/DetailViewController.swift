@@ -14,10 +14,9 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var originalTitleLabel: UILabel!
     @IBOutlet weak var posterImage: UIImageView!
-    @IBOutlet weak var durationLabel: UILabel!
+    @IBOutlet weak var languageLabel: UILabel!
     @IBOutlet weak var overviewLabel: UILabel!
-    
-    
+    @IBOutlet weak var popularityLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +24,11 @@ class DetailViewController: UIViewController {
         NetworkService.shared.getImage(urlPath: movieVM?.backdrop_path) { (image) in
             self.posterImage.image = image
         }
-        durationLabel.text = movieVM?.release_date
+        languageLabel.text = movieVM?.originalLanguage
         overviewLabel.text = movieVM?.overview
         originalTitleLabel.text = movieVM?.original_title
+        popularityLabel.text = movieVM?.popularity
+        
     }
 }
 

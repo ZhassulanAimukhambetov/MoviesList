@@ -14,6 +14,7 @@ class NetworkService {
     let urlAPI = "https://api.themoviedb.org/3"
     let urlNowPlaying = "/movie/now_playing"
     let urlSearch = "/search/movie"
+    let urlDetail = "/movie/"
     let apiKey = "a055f70548b7278f1f017fc33819dd5b"
     
     public static let shared = NetworkService()
