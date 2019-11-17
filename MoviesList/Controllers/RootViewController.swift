@@ -62,8 +62,10 @@ extension RootViewController: UITableViewDataSource {
 //MARK: -  UITableViewDelegate
 extension RootViewController: UITableViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        searchBar.endEditing(true)
         if segue.identifier == "toDetailVC" {
             if let cell = sender as? MovieCell {
+                cell.setSelected(false, animated: true)
                 if let indexPath = tableView.indexPath(for: cell){
                     let movieVM = movieViewModels[indexPath.row]
                     let detailVC = segue.destination as? DetailViewController
@@ -88,6 +90,7 @@ extension RootViewController: UISearchBarDelegate {
                 self.tableView.reloadData()
             }
         } else {
+            searchBar.endEditing(true)
             NetworkService.shared.getMovies { (moviesJSON) in
                 self.movieViewModels.removeAll()
                 moviesJSON.results.forEach{self.movieViewModels.append(MovieViewModel(movie: $0))}

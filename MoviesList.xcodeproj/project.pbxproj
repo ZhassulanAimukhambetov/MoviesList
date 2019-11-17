@@ -17,6 +17,7 @@
 		D1FF6AB4237DBF7D009E137E /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FF6AB3237DBF7D009E137E /* MovieCell.swift */; };
 		D1FF6AB8237E8379009E137E /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FF6AB7237E8379009E137E /* NetworkService.swift */; };
 		D1FF6ABA237FC3F4009E137E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FF6AB9237FC3F4009E137E /* DetailViewController.swift */; };
+		F0B83A672381465F006D61A7 /* ViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B83A662381465F006D61A7 /* ViewController1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		D1FF6AB3237DBF7D009E137E /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		D1FF6AB7237E8379009E137E /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		D1FF6AB9237FC3F4009E137E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F0B83A662381465F006D61A7 /* ViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController1.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				D1FF6AB3237DBF7D009E137E /* MovieCell.swift */,
 				D1FF6AA2237D1A62009E137E /* LaunchScreen.storyboard */,
 				D1FF6A9D237D1A5A009E137E /* Main.storyboard */,
+				F0B83A662381465F006D61A7 /* ViewController1.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0B83A672381465F006D61A7 /* ViewController1.swift in Sources */,
 				D1FF6A9C237D1A59009E137E /* RootViewController.swift in Sources */,
 				D1FF6A98237D1A59009E137E /* AppDelegate.swift in Sources */,
 				D1FF6AB4237DBF7D009E137E /* MovieCell.swift in Sources */,
@@ -349,8 +353,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YPDU2X4R25;
+				DEVELOPMENT_TEAM = FRVXASC334;
 				INFOPLIST_FILE = MoviesList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -367,8 +372,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YPDU2X4R25;
+				DEVELOPMENT_TEAM = FRVXASC334;
 				INFOPLIST_FILE = MoviesList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
