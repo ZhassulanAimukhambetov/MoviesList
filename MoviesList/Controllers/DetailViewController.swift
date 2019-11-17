@@ -29,6 +29,7 @@ class DetailViewController: UIViewController {
         popularityLabel.text = movieVM?.popularity
         
         
+        
     }
     
     
