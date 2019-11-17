@@ -14,14 +14,15 @@ class NetworkService {
     let urlAPI = "https://api.themoviedb.org/3"
     let urlNowPlaying = "/movie/now_playing"
     let urlSearch = "/search/movie"
+    let urlDetail = "/movie/"
     let apiKey = "a055f70548b7278f1f017fc33819dd5b"
     
     public static let shared = NetworkService()
     private init () {}
     
-    func getMovies(page: Int = 1, complition: @escaping (_ movies: MovieJSON) -> ()) {
+    func getMovies(page: Int = 1, complition: @escaping (MovieJSON) -> ()) {
         let pageString = String(page)
-        let url = URL(string: "\(urlAPI)\(urlNowPlaying)?api_key=\(apiKey)&language=ru&page=\(pageString)")
+        let url = URL(string: "\(urlAPI)\(urlNowPlaying)?api_key=\(apiKey)&language=en&page=\(pageString)")
         let task = URLSession.shared.dataTask(with: url!) { (data, responce, error) in
             guard let data = data else { return }
             let moviesJSON = try! JSONDecoder().decode(MovieJSON.self, from: data)
@@ -47,10 +48,10 @@ class NetworkService {
         }
     }
     
-    func searchMovies(page: Int = 1, query: String, complition: @escaping (_ movies: MovieJSON) -> ()) {
+    func searchMovies(page: Int = 1, query: String, complition: @escaping (MovieJSON) -> ()) {
         let pageString = String(page)
         let queryUrl = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
-        let url = URL(string: "\(urlAPI)\(urlSearch)?api_key=\(apiKey)&language=ru&page=\(pageString)&query=\(queryUrl!)")
+        let url = URL(string: "\(urlAPI)\(urlSearch)?api_key=\(apiKey)&language=en&page=\(pageString)&query=\(queryUrl!)")
         let task = URLSession.shared.dataTask(with: url!) { (data, responce, error) in
             guard let data = data else { return }
             let moviesJSON = try! JSONDecoder().decode(MovieJSON.self, from: data)
